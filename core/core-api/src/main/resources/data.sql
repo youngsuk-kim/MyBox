@@ -1,0 +1,1 @@
+INSERT INTO users (user_Id, name, password) VALUES ('testUser', 'testName', 'testPassword')
