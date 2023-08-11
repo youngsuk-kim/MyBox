@@ -4,7 +4,6 @@ spring.profiles.active: local
 spring:
   config:
     import:
-      - monitoring.yml
       - logging.yml
       - db-core.yml
   mvc.throw-exception-if-no-handler-found: true
