@@ -13,17 +13,17 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
 
-    @Mock
-    private UserReader userReader;
+	@Mock
+	private UserReader userReader;
 
-    private UserService userService;
+	private UserService userService;
 
-    @BeforeEach
-    void setUp() {
-        this.userService = new UserService(this.userReader);
-    }
+	@BeforeEach
+	void setUp() {
+		this.userService = new UserService(this.userReader);
+	}
 
-    @Test
+	@Test
     void findUserReturnFoundUser() {
         when(this.userReader.read(any()))
                 .thenReturn(

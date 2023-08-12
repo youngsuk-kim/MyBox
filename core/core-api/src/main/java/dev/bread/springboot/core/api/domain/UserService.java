@@ -5,13 +5,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    private final UserReader userReader;
+	private final UserReader userReader;
 
-    public UserService(UserReader userReader) {
-        this.userReader = userReader;
-    }
+	public UserService(UserReader userReader) {
+		this.userReader = userReader;
+	}
 
-    public UserResult findUserByUserId(String userId) {
-        return userReader.read(userId);
-    }
+	public UserResult findUserByUserId(String userId) {
+		return userReader.read(userId);
+	}
+
 }

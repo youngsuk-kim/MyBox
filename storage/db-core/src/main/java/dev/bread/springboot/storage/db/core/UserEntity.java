@@ -6,29 +6,30 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
 
-    protected UserEntity() {
-    }
+	protected UserEntity() {
+	}
 
-    public UserEntity(String userId, String name, String password) {
-        this.userId = userId;
-        this.name = name;
-        this.password = password;
-    }
+	public UserEntity(String userId, String name, String password) {
+		this.userId = userId;
+		this.name = name;
+		this.password = password;
+	}
 
-    @Column(unique = true, nullable = false)
-    private String userId;
+	@Column(unique = true, nullable = false)
+	private String userId;
 
-    @Column(nullable = false)
-    private String name;
+	@Column(nullable = false)
+	private String name;
 
-    @Column(nullable = false)
-    private String password;
+	@Column(nullable = false)
+	private String password;
 
-    public String getUserId() {
-        return userId;
-    }
+	public String getUserId() {
+		return userId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
+
 }

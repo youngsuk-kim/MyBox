@@ -9,17 +9,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class UserReader {
-    private final UserRepository userRepository;
+	private final UserRepository userRepository;
 
-    public UserReader(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+	public UserReader(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 
-    @Transactional(readOnly = true)
-    public UserResult read(String userId) {
-        UserEntity foundUser = userRepository.findByUserId(userId)
-                .orElseThrow(() -> new CoreApiException(ErrorType.NOT_FOUND_ERROR));
+	@Transactional(readOnly = true)
+	public UserResult read(String userId) {
+		UserEntity foundUser = userRepository.findByUserId(userId)
+			.orElseThrow(() -> new CoreApiException(ErrorType.NOT_FOUND_ERROR));
 
-        return new UserResult(foundUser.getId(), foundUser.getUserId(), foundUser.getName());
-    }
+		return new UserResult(foundUser.getId(), foundUser.getUserId(), foundUser.getName());
+	}
+
 }

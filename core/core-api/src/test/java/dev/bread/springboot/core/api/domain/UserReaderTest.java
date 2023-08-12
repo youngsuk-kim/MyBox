@@ -18,17 +18,17 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class UserReaderTest {
 
-    @Mock
-    private UserRepository userRepository;
+	@Mock
+	private UserRepository userRepository;
 
-    private UserReader userReader;
+	private UserReader userReader;
 
-    @BeforeEach
-    void setUp() {
-        this.userReader = new UserReader(this.userRepository);
-    }
+	@BeforeEach
+	void setUp() {
+		this.userReader = new UserReader(this.userRepository);
+	}
 
-    @Test
+	@Test
     void readReturnUser() {
         when(userRepository.findByUserId("testUser"))
                 .thenReturn(Optional.of(new UserEntity("testUser", "testName", "testPassword")));
@@ -39,7 +39,7 @@ class UserReaderTest {
         assertThat(userResult.name()).isEqualTo("testName");
     }
 
-    @Test
+	@Test
     void readByNotExistsUserIdThrowException() {
         when(userRepository.findByUserId("notUser"))
                 .thenReturn(Optional.empty());
@@ -48,4 +48,5 @@ class UserReaderTest {
             userReader.read("notUser");
         }).isInstanceOf(CoreApiException.class);
     }
+
 }
