@@ -32,4 +32,7 @@ public class UserEntity extends BaseEntity {
 		return name;
 	}
 
+	public String getPassword() {
+		return password;
+	}
 }

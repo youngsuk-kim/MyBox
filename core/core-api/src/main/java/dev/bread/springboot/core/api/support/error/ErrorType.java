@@ -7,8 +7,8 @@ public enum ErrorType {
 
 	DEFAULT_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, ErrorCode.E500, "An unexpected error has occurred.",
 			LogLevel.ERROR),
-
-	NOT_FOUND_ERROR(HttpStatus.NOT_FOUND, ErrorCode.E404, "Not found exception occurred", LogLevel.INFO);
+	NOT_FOUND_ERROR(HttpStatus.NOT_FOUND, ErrorCode.E404, "Not found exception occurred", LogLevel.INFO),
+	USER_PASSWORD_NOT_COLLECT(HttpStatus.UNAUTHORIZED, ErrorCode.E401, "Check user password", LogLevel.INFO);
 
 	private final HttpStatus status;
 
