@@ -1,9 +1,13 @@
+# MyBox (온라인 스토리지 서비스)
+![MY_BOX_%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84](https://github.com/youngsuk-kim/MyBox/assets/75110815/9211ad06-fff7-4a25-ab0f-8b485bb0fe23)
+
 ## 사용 기술
 - Java 17
 - Spring Boot 3.1.2
 - MySQL 8.0
 - QueryDsl
 - JPA
+- Jenkins
 - Naver Cloud Platform
 
 ## 개발 기간
@@ -16,7 +20,8 @@
 - [ ] 파일 업로드가 시작될 경우 즉시 사용가능한 공간이 차감된다.
 - [ ] 파일 업로드가 중간에 실패할 경우 사용가능한 공간은 그 전으로 돌아간다.
 - [ ] 유저는 다른 유저의 파일에 절대 접근할 수 없다.
-- [ ] 폴더 생성시에는 용량이 증가하지 않고, 파일 업로드 시에 용량이 증가한다.
+- [ ] 폴더 생성시에는 용량![image](https://github.com/youngsuk-kim/MyBox/assets/75110815/af6e2d7d-60c7-4495-b30e-783fca1df79a)
+이 증가하지 않고, 파일 업로드 시에 용량이 증가한다.
 - [ ] 같은 경로에 동일한 이름의 폴더나 파일이 존재할 수 없다.
 - [ ] 폴더 depth에는 제한이 없다.
 - [ ] 브라우에서 파일 다운로드가 가능해야 한다.
