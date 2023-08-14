@@ -5,8 +5,6 @@ import dev.bread.springboot.file.http.UploadFile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.time.LocalDateTime;
-
 @Service
 public class FileService {
 
@@ -18,8 +16,8 @@ public class FileService {
         this.uploadFile = new FakeHttpClient();
     }
 
-    public void upload(Long userId, MultipartFile file, LocalDateTime expiredAt) {
-        fileAppender.append(userId, file, expiredAt);
+    public void upload(Long userId, MultipartFile file) {
+        fileAppender.append(userId, file);
         uploadFile.upload(file.getName());
     }
 }

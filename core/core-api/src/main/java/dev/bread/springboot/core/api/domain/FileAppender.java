@@ -22,7 +22,7 @@ public class FileAppender {
     }
 
     @Transactional
-    public UploadFileResult append(Long id, MultipartFile file, LocalDateTime expiredAt) {
+    public UploadFileResult append(Long id, MultipartFile file) {
         FileEntity saveFileEntity = fileRepository
                 .save(
                         new FileEntity(id, file.getContentType())
@@ -32,7 +32,7 @@ public class FileAppender {
                 .save(new UploadFile(
                         file.getName(),
                         saveFileEntity,
-                        expiredAt,
+                        LocalDateTime.now(),
                         file.getSize())
                 );
 
