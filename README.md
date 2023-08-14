@@ -1,9 +1,13 @@
+## MyBox (온라인 스토리지 서비스)
+![MY_BOX_%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84](https://github.com/youngsuk-kim/MyBox/assets/75110815/9211ad06-fff7-4a25-ab0f-8b485bb0fe23)
+
 ## 사용 기술
 - Java 17
 - Spring Boot 3.1.2
 - MySQL 8.0
 - QueryDsl
 - JPA
+- Jenkins
 - Naver Cloud Platform
 
 ## 개발 기간
