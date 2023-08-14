@@ -6,15 +6,15 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "deleted_file")
-public class DeletedFile extends BaseEntity{
+public class DeletedFile extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private FileEntity file;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private FileEntity file;
 
-    @Column
-    private LocalDateTime deletedAt;
+	@Column
+	private LocalDateTime deletedAt;
 
-    @Column
-    private String volume;
+	@Column
+	private String volume;
 
 }

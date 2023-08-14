@@ -29,9 +29,7 @@ public class UserController {
 	}
 
 	@PostMapping("/v1/users/login")
-	public ApiResponse<?> login(@RequestParam String userId,
-								@RequestParam String password,
-								HttpSession httpSession) {
+	public ApiResponse<?> login(@RequestParam String userId, @RequestParam String password, HttpSession httpSession) {
 		if (!userService.checkPassword(userId, password)) {
 			throw new CoreApiException(ErrorType.USER_PASSWORD_NOT_COLLECT);
 		}

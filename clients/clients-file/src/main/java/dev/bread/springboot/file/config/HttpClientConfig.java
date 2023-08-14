@@ -15,19 +15,19 @@ import static dev.bread.springboot.file.config.Property.SECRET_KEY;
 
 public class HttpClientConfig {
 
-    public static final AmazonS3 S3 = AmazonS3ClientBuilder.standard()
-            .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(END_POINT, REGION_NAME))
-            .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(ACCESS_KEY, SECRET_KEY)))
-            .build();
+	public static final AmazonS3 S3 = AmazonS3ClientBuilder.standard()
+		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(END_POINT, REGION_NAME))
+		.withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(ACCESS_KEY, SECRET_KEY)))
+		.build();
 
-    public static final String BUCKET_NAME = "mybox-file";
+	public static final String BUCKET_NAME = "mybox-file";
 
-    public static PutObjectRequest fileUploadConfig(String folderName) {
-        ObjectMetadata objectMetadata = new ObjectMetadata();
-        objectMetadata.setContentLength(0L);
-        objectMetadata.setContentType("application/x-directory");
+	public static PutObjectRequest fileUploadConfig(String folderName) {
+		ObjectMetadata objectMetadata = new ObjectMetadata();
+		objectMetadata.setContentLength(0L);
+		objectMetadata.setContentType("application/x-directory");
 
-        return new PutObjectRequest(BUCKET_NAME, folderName,
-                new ByteArrayInputStream(new byte[0]), objectMetadata);
-    }
+		return new PutObjectRequest(BUCKET_NAME, folderName, new ByteArrayInputStream(new byte[0]), objectMetadata);
+	}
+
 }

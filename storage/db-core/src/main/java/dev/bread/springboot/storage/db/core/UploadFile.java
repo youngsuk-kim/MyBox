@@ -8,13 +8,33 @@ import java.time.LocalDateTime;
 @Table(name = "upload_file")
 public class UploadFile extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private FileEntity file;
+	protected UploadFile() {
+	}
 
-    @Column
-    private LocalDateTime expiredAt;
+	public UploadFile(String fileName, FileEntity file, LocalDateTime expiredAt, Long volume) {
+		this.fileName = fileName;
+		this.file = file;
+		this.expiredAt = expiredAt;
+		this.volume = volume;
+	}
 
-    @Column
-    private String volume;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private FileEntity file;
 
+	@Column
+	private String fileName;
+
+	@Column
+	private LocalDateTime expiredAt;
+
+	@Column
+	private Long volume;
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public LocalDateTime getExpiredAt() {
+		return expiredAt;
+	}
 }

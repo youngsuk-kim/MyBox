@@ -6,13 +6,13 @@ import jakarta.persistence.*;
 @Table(name = "download_file")
 public class DownloadFile extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private FileEntity file;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private FileEntity file;
 
-    @Column
-    private String volume;
+	@Column
+	private String volume;
 
-    @Column
-    private Long downloadCount;
+	@Column
+	private Long downloadCount;
 
 }

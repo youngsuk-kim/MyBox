@@ -35,4 +35,5 @@ public class UserEntity extends BaseEntity {
 	public String getPassword() {
 		return password;
 	}
+
 }

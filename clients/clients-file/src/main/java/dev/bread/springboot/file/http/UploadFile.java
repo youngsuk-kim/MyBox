@@ -2,6 +2,6 @@ package dev.bread.springboot.file.http;
 
 public interface UploadFile {
 
-	void upload();
+	void upload(String fileName);
 
 }
